@@ -1,9 +1,10 @@
 import React,{useRef} from 'react'
 import CanvasDraw from "react-canvas-draw";
+import { Navigate } from 'react-router-dom';
 import {NavBar} from './index'
 
 export default function Draw() {
-
+    const loginValidation = window.localStorage.getItem('session');
     const canvas:any = useRef()
     const cleanCanvan = () => {
         canvas.current.clear()
@@ -24,6 +25,7 @@ export default function Draw() {
     }
     return (
         <>
+        { !loginValidation && <Navigate replace to="/login" />}
          <NavBar></NavBar>
             <section className="py-5">
                 <div className="flex flex-col max-w-6xl mx-auto space-y-4  ">

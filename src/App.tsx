@@ -8,8 +8,10 @@ import {
 import { Login,Home,Pokemon,Favorites,Draw } from './components';
 
 function App() {
-  
+  const loginValidation = window.localStorage.getItem('session');
+
   return (
+    
     <Router>
       <Routes>
         <Route path="/login" element={<Login/>} />

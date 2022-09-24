@@ -1,3 +1,8 @@
+# Credencial to log in 
+
+email:admin@57blocks.com
+password:1234
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
