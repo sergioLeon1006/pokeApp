@@ -1,11 +1,9 @@
 import React, {useState,useEffect} from 'react'
-import {Link} from 'react-router-dom'
 import { GetPokemon } from '../services/index';
 import corazon from '../img/corazon.png';
 import corazon1 from '../img/corazonFull.png';
 
 export default  function PokemonCard({pokemon}:any) {
-
 
   const [pokemonData, setData]:any = useState([]);
   const [isLoading, setLoading] = useState(true); // Loading state
@@ -27,7 +25,7 @@ export default  function PokemonCard({pokemon}:any) {
       setImg(corazon1);
     }
 
-  }, [pokemon.url])
+  }, [])
   
   const addFavorites = (photo:string) =>{
     const favorites = (localStorage.getItem('favorites') || '[]');
@@ -66,7 +64,7 @@ export default  function PokemonCard({pokemon}:any) {
     return (
       <div className="col-md-4 col-sm-6 py-2">
         <div className="card">
-          <Link to={`pokemon/${pokemonData.id}`}> <img src={pokemonData.sprites.front_default} className="card-img-top cursor-pointer " alt={pokemonData.name} /></Link>
+          {<img src={pokemonData.sprites.front_default} className="cakd-img-top cursor-pointer " alt={pokemonData.name} />}
           <div className="container">
             <hr/>
             <div className="card-body row">

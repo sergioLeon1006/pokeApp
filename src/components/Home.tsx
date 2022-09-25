@@ -37,7 +37,7 @@ export default function Home() {
     const searchPokemon = () =>{
       const {value: pokemonName} =  pokemonString.current;
       if (pokemonName) {
-        searchGetPokemonById(pokemonName).then(function(response) {
+        searchGetPokemonById(pokemonName.toLowerCase()).then(function(response) {
           setSearch(response);
         }).catch(function (error) {
           console.log(error);
